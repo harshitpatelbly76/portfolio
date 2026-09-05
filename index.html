@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Harshit Patel — Computer Science & Engineering student, AI/ML learner and programmer.">
+<title>Harshit Patel | CSE • AI/ML • Software Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#070910;--bg2:#0c101a;--card:rgba(17,23,36,.72);--card2:#101725;
+ --text:#f7f8fc;--muted:#98a3b7;--line:rgba(255,255,255,.09);
+ --purple:#8b6cff;--cyan:#52dcff;--green:#62e5b0;--max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--text);background:
+ radial-gradient(900px 500px at 5% 0%,rgba(139,108,255,.16),transparent 65%),
+ radial-gradient(700px 500px at 95% 12%,rgba(82,220,255,.10),transparent 65%),
+ var(--bg);line-height:1.7;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:42px 42px}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 38px));margin:auto}
+section{padding:105px 0;position:relative}
+.section-kicker{color:var(--cyan);font-size:.74rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+h2{font:700 clamp(2.2rem,4vw,3.5rem)/1.05 "Space Grotesk";letter-spacing:-.04em;margin:10px 0 15px}
+.section-intro{max-width:720px;color:var(--muted)}
+/* nav */
+.navbar{position:fixed;z-index:50;top:0;left:0;right:0;border-bottom:1px solid var(--line);background:rgba(7,9,16,.75);backdrop-filter:blur(20px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 1.2rem "Space Grotesk";letter-spacing:.03em}.logo em{font-style:normal;color:var(--cyan)}
+.navlinks{display:flex;gap:25px;list-style:none}.navlinks a{color:var(--muted);font-size:.82rem;font-weight:600}.navlinks a:hover{color:#fff}
+.menu{display:none;background:none;color:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 11px;cursor:pointer}
+/* hero */
+.hero{min-height:100vh;padding-top:145px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.82rem;font-weight:700;margin-bottom:18px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 17px var(--green)}
+.hero h1{font:700 clamp(3.8rem,8vw,7rem)/.88 "Space Grotesk";letter-spacing:-.065em}
+.gradient{background:linear-gradient(105deg,#fff 10%,#b3a5ff 55%,#63e8ff);color:transparent;background-clip:text;-webkit-background-clip:text}
+.hero-role{font-size:1.22rem;color:var(--muted);margin:25px 0 12px}
+.hero-copy{max-width:720px;color:var(--muted);font-size:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:12px;font-size:.84rem;font-weight:700;transition:.25s}
+.btn:hover{transform:translateY(-3px);border-color:#ffffff30}
+.btn-primary{border:0;background:linear-gradient(135deg,var(--purple),#4e9cff);box-shadow:0 16px 38px rgba(139,108,255,.22)}
+.socials{display:flex;gap:21px;margin-top:20px;color:var(--muted);font-size:.8rem;font-weight:600}.socials a:hover{color:var(--cyan)}
+.photo-wrap{width:min(395px,88vw);margin:auto;position:relative}
+.photo-wrap:before{content:"";position:absolute;inset:-26px;border-radius:38px;background:linear-gradient(135deg,#8b6cff55,#52dcff22);filter:blur(28px);z-index:-1}
+.photo-frame{padding:9px;border-radius:31px;border:1px solid var(--line);background:#ffffff07;box-shadow:0 35px 100px #0008;transform:rotate(2deg)}
+.photo-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:23px}
+.photo-label{position:absolute;right:-14px;bottom:28px;padding:13px 15px;border:1px solid var(--line);border-radius:15px;background:#0b101bf2;box-shadow:0 18px 50px #0007}
+.photo-label b{display:block;font-size:.78rem}.photo-label span{color:var(--muted);font-size:.69rem}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 25px 70px #0005;backdrop-filter:blur(16px)}
+/* about */
+.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;align-items:center}
+.metrics{padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.metric{padding:18px;background:var(--card2);border:1px solid var(--line);border-radius:15px}
+.metric strong{font:700 1.9rem "Space Grotesk";display:block}.metric span{font-size:.7rem;color:var(--muted)}
+.about-copy{color:var(--muted);margin-bottom:15px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:6px 10px;border-radius:999px;background:#8b6cff12;border:1px solid #8b6cff2d;color:#c3baff;font-size:.7rem}
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
+.skill-card{padding:23px}.skill-icon{font-size:1.2rem;margin-bottom:9px}.skill-card h3{font:600 1rem "Space Grotesk";margin-bottom:12px}.skill-items{display:flex;flex-wrap:wrap;gap:7px}.skill-item{padding:7px 9px;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:.72rem}
+/* projects */
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}
+.project-card{padding:28px;position:relative;overflow:hidden;transition:.28s}.project-card:hover{transform:translateY(-6px);border-color:#8b6cff55}
+.project-top{display:flex;justify-content:space-between;gap:12px}.project-no{color:var(--cyan);font:700 .74rem "Space Grotesk";letter-spacing:.08em}.project-date{color:var(--muted);font-size:.68rem}
+.project-card h3{font:700 1.35rem "Space Grotesk";margin:10px 0 5px}.project-desc{color:var(--muted);font-size:.82rem}
+.project-list{margin:15px 0 0 18px}.project-list li{color:var(--muted);font-size:.79rem;margin:6px 0}.tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:19px}.tech span{font-size:.66rem;padding:5px 8px;border-radius:7px;background:#52dcff0c;color:#82eaff}
+/* timeline */
+.timeline{margin-top:35px;border-left:1px solid var(--line);padding-left:28px}
+.timeline-item{position:relative;margin-bottom:18px}.timeline-item:before{content:"";position:absolute;left:-34px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px #52dcff88}
+.timeline-card{padding:21px}.timeline-head{display:flex;justify-content:space-between;gap:20px}.timeline-head h3{font-size:.96rem}.date{color:var(--cyan);font-size:.69rem;white-space:nowrap}
+.timeline-card p,.timeline-card li{color:var(--muted);font-size:.77rem}.timeline-card ul{margin:8px 0 0 17px}
+.subhead{margin-top:50px}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:25px}.cert{padding:19px}.cert h3{font-size:.86rem}.cert p{color:var(--muted);font-size:.7rem;margin-top:3px}
+.achievement{margin-top:25px;padding:28px;background:linear-gradient(135deg,#8b6cff15,#52dcff08);border:1px solid #8b6cff3d;border-radius:20px}.achievement strong{font:700 1.75rem "Space Grotesk"}.achievement p{color:var(--muted);font-size:.8rem;margin-top:3px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}.contact-card{padding:26px}.contact-card h3{font:700 1.2rem "Space Grotesk"}.contact-card>p{color:var(--muted);font-size:.8rem;margin-top:4px}
+.contact-links{display:grid;gap:9px;margin-top:18px}.contact-links a{padding:12px 14px;border:1px solid var(--line);border-radius:11px;color:var(--muted);font-size:.75rem;word-break:break-word}.contact-links a:hover{color:#fff;border-color:#8b6cff55}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.7rem}.footer{display:flex;justify-content:space-between;gap:15px}
+
+/* About Me / Profile */
+.profile-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:35px;align-items:stretch}
+.profile-main{padding:32px;position:relative;overflow:hidden}
+.profile-main:after{content:"";position:absolute;width:220px;height:220px;right:-110px;top:-110px;border-radius:50%;background:rgba(139,108,255,.10);filter:blur(8px)}
+.profile-number{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:rgba(82,220,255,.08);border:1px solid rgba(82,220,255,.18);color:var(--cyan);font:700 .72rem "Space Grotesk";margin-bottom:17px}
+.profile-main h3,.profile-mini h3{font:700 1.3rem "Space Grotesk";margin-bottom:10px}
+.profile-main p,.profile-mini p{color:var(--muted);font-size:.82rem;margin-bottom:14px}
+.profile-side{display:grid;gap:14px}
+.profile-mini{padding:22px}
+.mini-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--cyan);background:rgba(82,220,255,.07);border:1px solid rgba(82,220,255,.13);margin-bottom:11px;font-weight:700}
+.profile-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:16px;overflow:hidden}
+.profile-strip>div{padding:20px;border-right:1px solid var(--line)}
+.profile-strip>div:last-child{border-right:0}
+.profile-strip span{display:block;color:var(--muted);font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.profile-strip strong{font:600 .84rem "Space Grotesk"}
+@media(max-width:900px){.profile-grid{grid-template-columns:1fr}.profile-strip{grid-template-columns:1fr}.profile-strip>div{border-right:0;border-bottom:1px solid var(--line)}.profile-strip>div:last-child{border-bottom:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.photo-wrap{max-width:365px}.skill-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.certs{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.container{width:min(var(--max),calc(100% - 26px))}section{padding:75px 0}.hero{padding-top:115px}.hero h1{font-size:3.6rem}.navlinks{display:none}.navlinks.open{display:flex;position:absolute;top:76px;left:0;right:0;padding:18px;background:#070910;border-bottom:1px solid var(--line);flex-direction:column;gap:15px}.menu{display:block}.skill-grid,.certs{grid-template-columns:1fr}.timeline-head,.footer{flex-direction:column}.photo-label{right:-3px}}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container nav">
+<a class="logo" href="#home">HARSHIT<em>.</em></a>
+<ul class="navlinks" id="navlinks">
+<li><a href="#about">About Me</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li>
+</ul><button class="menu" id="menu">☰</button>
+</div></nav>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="reveal">
+<div class="avail"><i></i> Computer Science & Engineering Student</div>
+<h1>Harshit<br><span class="gradient">Patel.</span></h1>
+<p class="hero-role">AI/ML Learner • Programmer • Problem Solver</p>
+<p class="hero-copy">I am a Computer Science and Engineering student with a growing foundation in programming, Data Structures and basic AI/ML concepts. I enjoy turning ideas into practical projects and continuously improving through coding, training and hands-on experimentation.</p>
+<div class="actions"><a class="btn btn-primary" href="#projects">Explore My Work ↗</a><a class="btn" href="Harshit_Patel_CV.pdf" target="_blank">View CV</a></div>
+<div class="socials"><a href="https://github.com/harshitpatelbly76" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/harshitpatel76/" target="_blank">LinkedIn</a><a href="mailto:harshitpatelbly76@gmail.com">Email</a></div>
+</div>
+<div class="photo-wrap reveal"><div class="photo-frame"><img src="assets/profile.jpg" alt="Harshit Patel"></div><div class="photo-label"><b>Python • C++ • AI/ML</b><span>Learning • Building • Improving</span></div></div>
+</div></section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-kicker">01 — About Me</div>
+    <h2>About Me</h2>
+    <p class="section-intro">
+      Computer Science and Engineering student focused on strengthening programming, Data Structures and basic AI/ML concepts through practical learning and projects.
+    </p>
+
+    <div class="profile-grid">
+      <article class="card profile-main reveal">
+        <span class="profile-number">01</span>
+        <h3>Who I am</h3>
+        <p>
+          I am Harshit Patel, a Bachelor of Technology student in Computer Science and Engineering
+          at Lovely Professional University. I am developing my technical foundation through
+          programming practice, academic learning, hands-on projects and technical training.
+        </p>
+        <p>
+          My current programming skills include Python, JavaScript, C and C++, supported by
+          knowledge of HTML, CSS and MySQL. I have also worked with ESP32, environmental sensors,
+          Wi-Fi communication and SQLite through my projects.
+        </p>
+        <p>
+          I am particularly interested in Artificial Intelligence and Machine Learning and have
+          started building my foundation through training and an Introduction to AI certification.
+          My goal is to keep strengthening these fundamentals by creating useful projects and
+          solving practical problems.
+        </p>
+      </article>
+
+      <div class="profile-side">
+        <article class="card profile-mini reveal">
+          <div class="mini-icon">◎</div>
+          <h3>How I learn</h3>
+          <p>
+            I learn by combining concepts with implementation — understanding a topic, practicing
+            it through coding exercises, and then applying it in projects.
+          </p>
+        </article>
+
+        <article class="card profile-mini reveal">
+          <div class="mini-icon">↗</div>
+          <h3>What I enjoy building</h3>
+          <p>
+            I enjoy practical applications that combine programming, automation, data and
+            user interaction, as demonstrated by my IoT monitoring and quiz application projects.
+          </p>
+        </article>
+
+        <article class="card profile-mini reveal">
+          <div class="mini-icon">◆</div>
+          <h3>What I bring</h3>
+          <p>
+            Problem solving, team collaboration, time management and adaptability are the
+            professional strengths I bring to academic projects and collaborative work.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    
+  </div>
+</section>
+
+<section id="skills"><div class="container">
+<div class="section-kicker">02 — Technical Skills</div><h2>My toolkit</h2><p class="section-intro">A clean overview of the programming languages, technologies, databases/tools and professional strengths included in my CV.</p>
+<div class="skill-grid">
+<div class="card skill-card reveal"><div class="skill-icon">⌘</div><h3>Programming Languages</h3><div class="skill-items"><span class="skill-item">Python</span><span class="skill-item">JavaScript</span><span class="skill-item">C</span><span class="skill-item">C++</span></div></div>
+<div class="card skill-card reveal"><div class="skill-icon">◈</div><h3>Web Technologies</h3><div class="skill-items"><span class="skill-item">HTML</span><span class="skill-item">CSS</span></div></div>
+<div class="card skill-card reveal"><div class="skill-icon">▦</div><h3>Databases & Tools</h3><div class="skill-items"><span class="skill-item">MySQL</span><span class="skill-item">SQLite</span><span class="skill-item">ESP32</span><span class="skill-item">Wi-Fi Communication</span></div></div>
+<div class="card skill-card reveal"><div class="skill-icon">λ</div><h3>CS Foundations</h3><div class="skill-items"><span class="skill-item">Data Structures</span><span class="skill-item">Algorithms</span><span class="skill-item">CRUD</span><span class="skill-item">Programming Fundamentals</span></div></div>
+<div class="card skill-card reveal"><div class="skill-icon">AI</div><h3>AI / ML Foundation</h3><div class="skill-items"><span class="skill-item">Basic AI/ML Concepts</span><span class="skill-item">Introduction to AI</span><span class="skill-item">Problem Solving</span></div></div>
+<div class="card skill-card reveal"><div class="skill-icon">+</div><h3>Professional Strengths</h3><div class="skill-items"><span class="skill-item">Problem Solving</span><span class="skill-item">Team Collaboration</span><span class="skill-item">Time Management</span><span class="skill-item">Adaptability</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="section-kicker">03 — Projects</div><h2>Selected work</h2><p class="section-intro">Projects from my CV that demonstrate practical application of programming, embedded systems, databases and user-focused development.</p>
+<div class="project-grid">
+<article class="card project-card reveal"><div class="project-top"><span class="project-no">PROJECT 01 / IoT</span><span class="project-date">JAN 2026 — JUN 2026</span></div><h3>Smart Cloth Monitoring System</h3><p class="project-desc">An IoT-based system using ESP32 and environmental sensors to monitor conditions relevant to cloth drying.</p><ul class="project-list"><li>Developed an IoT-based monitoring system using ESP32 and environmental sensors.</li><li>Monitored temperature and humidity in real time to determine suitable drying conditions.</li><li>Implemented automatic alerts when environmental conditions crossed predefined thresholds.</li><li>Used Embedded C/C++, sensor interfacing and Wi-Fi communication for automation and remote monitoring.</li></ul><div class="tech"><span>ESP32</span><span>Embedded C/C++</span><span>Environmental Sensors</span><span>Wi-Fi</span></div></article>
+<article class="card project-card reveal"><div class="project-top"><span class="project-no">PROJECT 02 / APPLICATION</span><span class="project-date">QUIZ PLATFORM</span></div><h3>Quiz Application</h3><p class="project-desc">An interactive quiz platform supporting programming and technical categories with timed evaluation and persistent quiz data.</p><ul class="project-list"><li>Developed multiple-choice quizzes across programming and technical categories.</li><li>Implemented timer-based quizzes, randomized questions, automatic score calculation and instant result evaluation.</li><li>Designed responsive navigation, progress tracking and detailed performance results.</li><li>Integrated SQLite for users, questions, scores and quiz history with CRUD functionality.</li></ul><div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>SQLite</span></div></article>
+</div></div></section>
+
+<section id="journey"><div class="container">
+<div class="section-kicker">04 — Education & Growth</div><h2>My learning journey</h2><p class="section-intro">Academic education, hands-on training and certifications that form the foundation of my technical growth.</p>
+<div class="timeline">
+<div class="timeline-item reveal"><div class="card timeline-card"><div class="timeline-head"><h3>Bachelor of Technology — Computer Science and Engineering</h3><span class="date">AUG 2025 — PRESENT</span></div><p>Lovely Professional University • Phagwara, Punjab</p><ul><li>Current CGPA: 7.84</li></ul></div></div>
+<div class="timeline-item reveal"><div class="card timeline-card"><div class="timeline-head"><h3>Hands-on Technical Training — Certificate</h3><span class="date">JUN 2025 — JUL 2025</span></div><p>Lovely Professional University</p><ul><li>Completed hands-on training in Python, C/C++, Data Structures and basic AI/ML concepts.</li><li>Practiced programming fundamentals, problem-solving and algorithm implementation through coding exercises and projects.</li></ul></div></div>
+<div class="timeline-item reveal"><div class="card timeline-card"><div class="timeline-head"><h3>Higher Secondary Education</h3><span class="date">MAY 2023 — MAR 2024</span></div><p>Saraswati Vidhya Mandir Inter College • Bareilly, Uttar Pradesh</p><ul><li>UP Board — 92%</li></ul></div></div>
+<div class="timeline-item reveal"><div class="card timeline-card"><div class="timeline-head"><h3>Secondary Education</h3><span class="date">JUN 2021 — MAR 2022</span></div><p>Saraswati Vidhya Mandir Inter College • Bareilly, Uttar Pradesh</p><ul><li>UP Board — 88.5%</li></ul></div></div>
+</div>
+<div class="subhead section-kicker">Certifications</div>
+<div class="certs"><div class="card cert reveal"><h3>Introduction To Python</h3><p>Infosys • Aug 2025</p></div><div class="card cert reveal"><h3>C Programming Certification</h3><p>Udemy • Sep 2024</p></div><div class="card cert reveal"><h3>Introduction to AI</h3><p>Infosys • May 2024</p></div></div>
+<div class="achievement reveal"><strong>Top 10 among 50+ teams</strong><p>Ranked Top 10 in a college hackathon with an innovative web solution prototype.</p></div>
+</div></section>
+
+<section id="contact"><div class="container">
+<div class="section-kicker">05 — Contact</div><h2>Let's build something.</h2><p class="section-intro">I'm interested in learning opportunities, projects, hackathons and technical collaboration.</p>
+<div class="contact-grid">
+<div class="card contact-card reveal"><h3>Get in touch</h3><p>Contact details listed on my CV.</p><div class="contact-links"><a href="mailto:harshitpatelbly76@gmail.com">✉ &nbsp; harshitpatelbly76@gmail.com</a><a href="tel:+917668525615">☎ &nbsp; +91 7668525615</a><a href="https://github.com/harshitpatelbly76" target="_blank">⌘ &nbsp; github.com/harshitpatelbly76</a><a href="https://www.linkedin.com/in/harshitpatel76/" target="_blank">in &nbsp; linkedin.com/in/harshitpatel76</a></div></div>
+<div class="card contact-card reveal"><h3>Current direction</h3><p>Strengthening programming and Data Structures while exploring basic AI/ML concepts and building practical applications.</p><div class="chips" style="margin-top:18px"><span class="chip">AI/ML</span><span class="chip">Python</span><span class="chip">C/C++</span><span class="chip">DSA</span><span class="chip">IoT</span></div><div style="margin-top:22px"><a class="btn btn-primary" href="Harshit_Patel_CV.pdf" target="_blank">Open Full CV ↗</a></div></div>
+</div></div></section>
+</main>
+<footer><div class="container footer"><span>© <span id="year"></span> Harshit Patel</span><span>CSE Student • AI/ML Learner</span></div></footer>
+<script>
+const menu=document.getElementById("menu"),nav=document.getElementById("navlinks");
+menu.addEventListener("click",()=>nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+document.getElementById("year").textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+</script>
+</body>
+</html>
